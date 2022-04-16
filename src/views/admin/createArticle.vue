@@ -66,7 +66,7 @@ export default {
     methods:{
         addArticle(){
           
-          console.log(this.id);
+          
                 this.$store.commit('addArt', this.artcile)
         }
     }
