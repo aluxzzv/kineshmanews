@@ -8,7 +8,7 @@
             <p class="card-text">{{item.description}}</p>
             {{item.id}}
             <div class="col-lg-2">
-                <router-link class="btn btn-primary"  to="/acticle/:id">Подробнее</router-link> 
+                <router-link class="btn btn-primary"  to="/article/{{item.id}}">Подробнее</router-link> 
                 
             </div>    
         </div>

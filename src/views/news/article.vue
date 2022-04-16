@@ -22,11 +22,10 @@
 <script>
 export default{
     name:'article',
-   computed:{
-       id(){
-           return this.$router.params.id
-       }
+   props:[id]
+       
+       
    }
-}
+
 
 </script>
