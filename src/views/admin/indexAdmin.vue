@@ -7,10 +7,15 @@
         <div class="card-body">
             <p class="card-text">{{item.description}}</p>
             {{item.id}}
-            <div class="col-lg-2">
-                <router-link class="btn btn-primary" :to="{name:'editArticle',params:{id:item.id}}">Редактировать...</router-link> 
+            <div class="row">
+            <div class="col-2 aling-self-start">
+                <router-link class="btn btn-primary" :to="{name:'editArticle',params:{id:item.id}}">Редактировать</router-link> 
+            </div> 
+            <div class="col-2 aling-self-start">
+                <button v-on:click="deleteItem(item.id)" class="btn btn-danger" >Удалить{{item.id}}</button> 
                 
-            </div>    
+            </div>  
+            </div>   
         </div>
 </div>
     </div>
@@ -28,6 +33,12 @@ export default{
     computed:{
         getArt(){
             return this.$store.getters.getArticle
+        }
+    },
+    methods:{
+        deleteItem(id){
+            this.$store.commit('deleteArt',id)
+            console.log(id)
         }
     }
     

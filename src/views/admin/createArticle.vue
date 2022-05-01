@@ -70,11 +70,13 @@ export default {
           this.$store.commit('addArt',this.article)
           console.log(this.article.id)
           this.$router.push('/')
-          
-
         }       
-        }
+    },
+    mounted(){
+      this.article.id = new Date().getTime()
+
     }
+ }
     
     
 
