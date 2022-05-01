@@ -12,7 +12,7 @@ export default{
     },
     computed:{
         getArt(){
-            return this.$store.getters.getArticle
+            //return this.$store.getters.getArticleShow('1')
         }
     }
 }

@@ -3,7 +3,7 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     article: [{
-      id: Date(),
+      id: 123,
       heading: 'Статья первая',
       content: 'контент 1',
       autor: 'Бублико',
@@ -12,7 +12,7 @@ export default createStore({
       dateArticle: ' '
     },
     {
-      id: Date(),
+      id: 456,
       heading: 'Статья вторая',
       content: 'контент 2',
       autor: 'Колбаскин',
@@ -29,12 +29,28 @@ export default createStore({
     }
   },
   actions: {
+    
+
   },
   getters:{
       getArticle: state => {
         return state.article
-      }
-  },
-  modules: {
+      },
+      getArticleItem: state =>(id)=>{
+        console.log(id)
+        /*for(let o = 1; i < state.article.length;i++){
+          if(state.article[i].id == id){
+            return state.article[i]
+          }*/
+          return state.article.find(art=>art.id == id)
+        },
+
+        getArticleShow: state=> (category)=>{
+          return state.article.find(art=>art.category==category)
+        }
+    
   }
-})
+
+  }
+  
+)

@@ -9,6 +9,8 @@ import science from '@/views/news/science.vue'
 import sports from '@/views/news/sports.vue'
 import createArticle from '@/views/admin/createArticle.vue'
 import article from '@/views/news/article.vue'
+import indexAdmin from '@/views/admin/indexAdmin.vue'
+import editArticle from '@/views/admin/editArticle.vue'
 const routes = [
   {
     path: '/',
@@ -18,10 +20,15 @@ const routes = [
   {
     path:'/article/:id',
     name:'article',
-    props:true,
+    props: true,
     component: article
-    
   },
+  { 
+    path:'/admin/editArticle/:id',
+  name:'editArticle',
+  props: true,
+  component: editArticle
+},
   {
     path: '/politics',
     name: '/politics',
@@ -56,6 +63,11 @@ const routes = [
     path: '/admin/create',
     name: '/admin/create',
     component: createArticle
+  },
+  {
+    path: '/admin/list',
+    name: 'indexAdmin',
+    component: indexAdmin
   },
   {
     path: '/about',

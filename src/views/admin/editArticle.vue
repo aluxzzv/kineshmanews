@@ -2,6 +2,7 @@
  <adminmenu/>
  <form class="row g-3">
   <div class="col-md-6">
+  {{artcile.heading}}
     <label for="Heading" class="form-label">Заголовк</label>
     <input v-model="artcile.heading"  type="text" class="form-control" id="Heading">
   </div>
@@ -47,14 +48,15 @@
 <script>
 import adminmenu from '@/components/adminmenu'
 export default {
-    name: 'createArticle',
+    name: 'editArticle',
     components:{
         adminmenu
     },
+     props:['id'],
     data(){
         return{
             artcile:{
-              id: Date(),
+              id: '',
                heading: '',
                content: '',
                autor: '',
@@ -73,6 +75,11 @@ export default {
           
 
         }       
+        },
+        mounted(){
+          //this.article.id=new Date().getTime()
+          this.artcile = this.$store.getters.getArticleItem(this.id)
+          console.log(this.artcile)
         }
     }
     

@@ -1,17 +1,15 @@
 <template>
 <div class="container">
 <div class="row">
-<h1> Заголовок </h1>
-{{id}}
+<newsmenu/>
+<h1> {{Art.heading}} </h1>
+{{Art}}}
 
-<p> {
-    path: '/history/:id',
-    component:HistoryId,
-    name:'historyId',
-    props: true
-} </p>
 
-<p> autor </p>
+
+<p> {{Art.content}} </p>
+<p> {{Art.autor}}</p>
+<div> {{Art.dateArticle}} </div>
 </div>
 
 </div>
@@ -20,10 +18,25 @@
 
 
 <script>
+import newsmenu from '@/components/newsmenu'
 export default{
     name:'article',
-   props:[id]
-       
+    components:{
+        newsmenu
+    },
+   data(){
+       return{
+           article:''
+       }
+   },
+   props:['id'],
+   computed:{
+       Art(){
+           //console.log(this.$store.getters.getArticleItem(this.id))
+           return this.$store.getters.getArticleItem(this.id)
+       }
+   }
+    
        
    }
 

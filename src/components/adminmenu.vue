@@ -25,6 +25,8 @@
         <li class="nav-item">
            <router-link class="nav-link active" aria-current="page"  to="/sports">Спорт</router-link> 
         </li>
+        
+        
         <li class="nav-item">
            <router-link class="nav-link active" aria-current="page"  to="/admin/create">Sign in</router-link> 
         </li>

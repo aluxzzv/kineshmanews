@@ -8,7 +8,7 @@
             <p class="card-text">{{item.description}}</p>
             {{item.id}}
             <div class="col-lg-2">
-                <router-link class="btn btn-primary" :to="{name:'article',params:{id:item.id}}">Подробнее...</router-link> 
+                <router-link class="btn btn-primary" :to="{name:'editArticle',params:{id:item.id}}">Редактировать...</router-link> 
                 
             </div>    
         </div>
@@ -21,7 +21,7 @@
 <script>
 import newsmenu from '@/components/newsmenu.vue'
 export default{
-    name: 'index',
+    name: 'indexAdmin',
     components:{
         newsmenu
     },
@@ -30,6 +30,7 @@ export default{
             return this.$store.getters.getArticle
         }
     }
+    
 }
 </script>
 
